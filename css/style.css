@@ -1,0 +1,439 @@
+html {
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+    background: #bfbaba url("../img/silver-texture.jpg") no-repeat center;
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.intro {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.intro-wrapper {
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    padding: 20px 40px;
+    opacity: 0.7;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-wrapper h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin: 15px 0 0;
+    font-size: 2.5rem;
+}
+
+.intro-wrapper p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    margin-bottom: 15px;
+}
+
+.intro-wrapper p:last-of-type {
+    margin-bottom: 30px;
+}
+
+.intro-wrapper button, .intro-next-text {
+    padding: 10px;
+    width: 200px;
+    background-color:rgba(158, 21, 11, 0.75);
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin: 5px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 20px 10px;
+    border: none;
+    transition: 0.7s;
+}
+
+.intro-wrapper button:hover, .intro-next-text:hover {
+    opacity: 0.65;
+}
+
+video.intro-video {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -50;
+    height: 100%;
+    width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw; /* 100 * 9 / 16 */
+}
+
+video.intro-video source {
+    width: 100%;
+}
+
+.game-head {
+    width: 980px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(179, 197, 212, 0.25);
+}
+
+.game-head h2 {
+    margin-bottom: 0;
+    padding: 20px 20px 15px;
+    color: #ffc107;
+    text-transform: uppercase;
+    background:rgba(16, 16, 16, 0.45);;
+    clip-path: polygon(0 0, 90% 0%, 100% 100%, 0 100%);
+    font-size: 1.15rem;
+    width: 60%;
+
+}
+
+.game-head h2:last-child {
+    color: #ffffff;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    text-align: right;
+    padding: 20px 20px 15px;
+}
+
+.game-wrapper {
+    background: rgba(163, 149, 175, 0.15);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.35);
+    width: 980px;
+    height: 75vh;
+    margin: 0 auto 20px;
+    padding: 60px 50px 30px;
+    box-sizing: border-box;
+    display: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 0 0 25px 25px;
+}
+
+.circle {
+    position: inherit;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #ffffff;
+    z-index: 200;
+    box-shadow: 0px 0px 20px 6px rgba(255,255,255,0.25);
+}
+
+.circle-div {
+    position: relative;
+}
+
+.circle-red-div {
+    background: rgba(255, 0, 0, .25);
+    height: 115px;
+    width: 115px;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 500;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.number-display {
+    position: absolute;
+    color: #ffffff;
+    top: 25px;
+    font-size: 1.35rem;
+    text-align: center;
+    width: 100%;
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.circle-select-div {
+    width: 115px;
+    height: 115px;
+    background: rgba(33, 150, 243, .25);
+    border-radius: 100%;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 600;
+    top: 0;
+}
+
+/* Animate Section */
+.animate {
+    animation-name: animate-motion;
+    animation-duration: 4s;
+}
+
+@keyframes animate-motion {
+    from {transform:scale(.3); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+.red-animate {
+    animation-name: animate-fade-in;
+    animation-duration: 1s;
+}
+
+@keyframes animate-fade-in {
+    from {transform:scale(.3); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+.text-animate {
+    animation-name: animate-text-fade-in;
+    animation-duration: 2s;
+}
+
+@keyframes animate-text-fade-in {
+    from {opacity: .10;}
+    to {opacity: 1;}
+}
+
+.text-animate-fade-in-out {
+    animation-name: animate-text-fade-in-and-out;
+    animation-duration: 5s;
+}
+
+@keyframes animate-text-fade-in-and-out {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* End Animate Section */
+
+.circle p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: steelblue;
+}
+
+.hit, .congratulations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 400;
+    background: red url("../img/explosion.jpg") no-repeat center;
+    background-size: cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hit h5, .congratulations h5 {
+    font-size: 3rem;
+    color: #ffffff;
+    background: rgba(0, 0, 0, .65);
+    padding: 30px 20px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.congratulations h5 {
+    position: absolute;
+    z-index: 800;
+    top: 34%;
+}
+
+.congratulations {
+    background: darkgray;
+    overflow: hidden;
+}
+
+.congratulations-video {
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, .65);
+    height: 100%;
+    width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw; /* 100 * 9 / 16 */
+}
+
+.congrats-info-head {
+    color: #ffffff;
+    font-size: 7rem;
+    z-index: 900;
+}
+
+.congrats-won-head {
+    color: #ffffff;
+    font-size: 4rem;
+    z-index: 900;
+    text-align: center;
+    line-height: 1.325;
+    width: 70%;
+}
+
+button.replay, button.next-level {
+    font-size: 1.25rem;
+    padding: 20px 26px 15px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, .75);
+    background: rgba(0, 0, 0, .65);
+    border-radius: 5px;
+    transition: 0.7s;
+}
+
+button.replay:hover, button.next-level:hover {
+    opacity: 0.7;
+}
+
+button.next-level {
+    position: absolute;
+    top: 55%;
+    z-index: 800;
+}
+
+.hazard-icon {
+    height: 150px;
+    width: 150px;
+    z-index: 2000;
+    top: 30%;
+    position: absolute;
+}
+.message {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background:rgb(56, 53, 53);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2000;
+}
+.message-wrapper {
+    width: 250px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    border-radius: 15px;
+}
+.message-wrapper h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;;
+}
+.message-wrapper p {
+    font-size: 1rem;
+    line-height: 1.35;
+}
+.message-wrapper button {
+    font-size: 1.15rem;
+    border-radius: 5px;
+    background: #000000;
+    padding: 12px 15px 8px;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 998px) {
+    body {
+        position: relative;
+    }
+    .intro-wrapper h1 {
+        font-size: 2rem;
+    }
+    
+    .intro-wrapper p {
+        font-size: 1rem;
+    }
+    .game-head {
+        width: 728px;
+        margin: 40px auto 0;
+        display: none;
+        justify-content: inherit;
+        flex-direction: column;
+        background: #2d2b2b;
+        clip-path: polygon(0% 0%, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        height: 120px;
+        position: absolute;
+        top: 32px; left: 0; bottom: 0; right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 1;
+        z-index: 500;
+        border-radius: 25px 25px 0 0;
+    }
+    .game-head h2 {
+        box-sizing: border-box;
+        padding: 15px 20px 0;
+        background: none;
+        clip-path: none;
+        font-size: 1.15rem;
+        width: 100%;
+        text-align: center;
+    }
+    .game-head h2:last-child {
+        clip-path: none;
+        text-align: center;
+        padding: 0 20px 25px;
+    }
+    .game-wrapper {
+        width: 728px;
+        padding: 80px 65px 30px;
+        height: 65vh;
+        position: absolute;
+        top: 150px; left: 0; bottom: 0; right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .circle {
+        position: inherit;
+        width: 75px;
+        height: 75px;
+    }
+    .circle-red-div {
+        height: 75px;
+        width: 75px;
+        display: flex;
+    }
+    .number-display {
+        font-size: 1.15rem;
+        top: 10%;
+    }
+    .circle-select-div {
+        width: 75px;
+        height: 75px;
+        top: 0;
+    }
+    .congrats-info-head {
+        font-size: 5rem;
+    }
+    .hazard-icon {
+        height: 125px;
+        width: 125px;
+    }
+  }
